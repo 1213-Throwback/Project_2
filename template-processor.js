@@ -1,5 +1,5 @@
 'use strict';
-class templateProcessor{
+class TemplateProcessor{
     constructor(template) {
         this.template = template;
     }
