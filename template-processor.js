@@ -4,7 +4,7 @@ class templateProcessor{
         this.template = template;
     }
 
-    fillIn = function (dictionary){
+     fillIn = function (dictionary){
         return template;
     }
 
