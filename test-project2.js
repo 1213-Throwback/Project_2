@@ -9,19 +9,19 @@
 /* eslint-env browser, node */
 
 // Result message for Problems 1-3
-var p1Message = 'SUCCESS';
-var p2Message = 'SUCCESS';
-var p3Message = 'SUCCESS';
+let p1Message = 'SUCCESS';
+let p2Message = 'SUCCESS';
+let p3Message = 'SUCCESS';
 
 // Keep track of all the var statements
-var varDeclared = ['varDeclared', 'p1Message', 'p2Message', 'p3Message'];
+let varDeclared = ['varDeclared', 'p1Message', 'p2Message', 'p3Message'];
 
 // Utility functions
 function arraysAreTheSame(a1, a2) {
   if (!Array.isArray(a1) || !Array.isArray(a2) || (a1.length !== a2.length)) {
     return false;
   }
-  for (var i = 0; i < a1.length; i += 1) {
+  for (let i = 0; i < a1.length; i += 1) {
     if (a1[i] !== a2[i]) {
       return false;
     }
@@ -30,28 +30,29 @@ function arraysAreTheSame(a1, a2) {
 }
 
 // ********************* Test MakeMultiFilter
+//let p1Message = 'SUCCESS';
 
 if (typeof MakeMultiFilter !== 'function') {
   console.error('MakeMultiFilter is not a function', typeof MakeMultiFilter);
   p1Message = 'FAILURE';
 } else {
-  var originalArray = [1, 2, 3];
-  var filterFunc = window.MakeMultiFilter(originalArray);
+  let originalArray = [1, 2, 3];
+  let filterFunc = window.MakeMultiFilter(originalArray);
 
-  var secondArray = [1, 2, 3, 4];
-  var filterFuncTwo = window.MakeMultiFilter(secondArray);
+  let secondArray = [1, 2, 3, 4];
+  let filterFuncTwo = window.MakeMultiFilter(secondArray);
 
   if (typeof filterFunc !== 'function') {
     console.error('MakeMultiFilter does not return a function', filterFunc);
     p1Message = 'FAILURE';
   } else {
-    var result = filterFunc();
+    let result = filterFunc();
     if (!arraysAreTheSame([1, 2, 3], result)) {
       console.error('filter function with no args does not return the original array', result);
       p1Message = 'FAILURE';
     }
 
-    var callbackPerformed = false;
+    let callbackPerformed = false;
     result = filterFunc(function (item) {
       return item !== 2;
     }, function (callbackResult) {
@@ -106,16 +107,17 @@ if (typeof MakeMultiFilter !== 'function') {
 console.log('Test MakeMultiFilter:', p1Message);
 
 // ********************* Test TemplateProcessor
+//let p2Message = 'SUCCESS';
 
 if (typeof TemplateProcessor !== 'function') {
   console.error('TemplateProcessor is not a function', typeof TemplateProcessor);
   p2Message = 'FAILURE';
 } else {
-  var template = 'My favorite month is {{month}} but not the day {{day}} or the year {{year}}';
-  var dateTemplate = new TemplateProcessor(template);
+  let template = 'My favorite month is {{month}} but not the day {{day}} or the year {{year}}';
+  let dateTemplate = new TemplateProcessor(template);
 
-  var dictionary = { month: 'July', day: '1', year: '2016' };
-  var str = dateTemplate.fillIn(dictionary);
+  let dictionary = { month: 'July', day: '1', year: '2016' };
+  let str = dateTemplate.fillIn(dictionary);
 
   if (str !== 'My favorite month is July but not the day 1 or the year 2016') {
     console.error('TemplateProcessor didn\'t work');
@@ -129,7 +131,7 @@ if (typeof TemplateProcessor !== 'function') {
 console.log('Test TemplateProcessor:', p2Message);
 
 // ********************* Test to see if the symbols we defined are in the global address space
-
+//let p3Message = 'SUCCESS';
 varDeclared.forEach(function (sym) {
   if (window[sym] !== undefined) {
     console.error('Found my symbol', sym, 'in DOM');
