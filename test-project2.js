@@ -1,4 +1,4 @@
-(function(){
+// (function(){
 'use strict';
 
 /*
@@ -9,13 +9,19 @@
 
 /* eslint-env browser, node */
 
-// Result message for Problems 1-3
-var p1Message = 'SUCCESS';
-var p2Message = 'SUCCESS';
-var p3Message = 'SUCCESS';
 
+// Result message for Problems 1-3
+let p1Message = 'SUCCESS';
+let p2Message = 'SUCCESS';
+let p3Message = 'SUCCESS';
+
+  window.Project2Results = {
+    p1Message: p1Message,
+    p2Message: p2Message,
+    p3Message: p3Message,
+  };
 // Keep track of all the var statements
-var varDeclared = ['varDeclared', 'p1Message', 'p2Message', 'p3Message'];
+let varDeclared = ['varDeclared', 'p1Message', 'p2Message', 'p3Message'];
 
 // Utility functions
 function arraysAreTheSame(a1, a2) {
@@ -105,18 +111,17 @@ if (typeof MakeMultiFilter !== 'function') {
   }
 }
 console.log('Test MakeMultiFilter:', p1Message);
-
 // ********************* Test TemplateProcessor
 
 if (typeof TemplateProcessor !== 'function') {
   console.error('TemplateProcessor is not a function', typeof TemplateProcessor);
   p2Message = 'FAILURE';
 } else {
-  var template = 'My favorite month is {{month}} but not the day {{day}} or the year {{year}}';
-  var dateTemplate = new TemplateProcessor(template);
+  let template = 'My favorite month is {{month}} but not the day {{day}} or the year {{year}}';
+  let dateTemplate = new TemplateProcessor(template);
 
-  var dictionary = { month: 'July', day: '1', year: '2016' };
-  var str = dateTemplate.fillIn(dictionary);
+  let dictionary = { month: 'July', day: '1', year: '2016' };
+  let str = dateTemplate.fillIn(dictionary);
 
   if (str !== 'My favorite month is July but not the day 1 or the year 2016') {
     console.error('TemplateProcessor didn\'t work');
@@ -154,4 +159,4 @@ window.onload = function () {
   document.getElementById('p2').innerHTML = p2Message;
   document.getElementById('p3').innerHTML = p3Message;
 };
-})();
+//})();
