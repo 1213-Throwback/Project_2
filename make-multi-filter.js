@@ -30,7 +30,9 @@ function MakeMultiFilter(originalArray){
     }
     if (typeof module === 'object') {
         module.exports = MakeMultiFilter;
-    }
+    }// else{
+    //     module.id= 'function';
+    // }
     return arrayFilterer;
 }
 
