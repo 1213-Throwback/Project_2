@@ -1,14 +1,12 @@
 'use strict';
-class TemplateProcessor{
-    constructor(template) {
-        this.template = template;
-    }
 
-     fillIn = function (dictionary){
-        return template;
-    }
+function TemplateProcessor (template) {
+    this.template = template;
+}
 
-
-
+    TemplateProcessor.prototype.fillIn = function(dictionary){
+    return this.template.replace(/{{(.*?)}}/g);
 
 }
+
+
