@@ -14,13 +14,13 @@
 let p1Message = 'SUCCESS';
 let p2Message = 'SUCCESS';
 let p3Message = 'SUCCESS';
-/*
+
   window.Project2Results = {
     p1Message: p1Message,
     p2Message: p2Message,
     p3Message: p3Message,
   };
-  */
+
 
 // Keep track of all the var statements
 let varDeclared = ['varDeclared', 'p1Message', 'p2Message', 'p3Message'];
