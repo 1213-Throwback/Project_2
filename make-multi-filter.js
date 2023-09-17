@@ -28,10 +28,11 @@ function MakeMultiFilter(originalArray){
         return arrayFilterer;
 
     }
-
+    if (typeof module === 'object') {
+        module.exports = MakeMultiFilter;
+    }
     return arrayFilterer;
 }
-module.exports = MakeMultiFilter;
 
 // Invoking MakeMultiFilter() with originalArray = [1, 2, 3] returns a
 // function, saved in the variable arrayFilterer1, that can be used to
